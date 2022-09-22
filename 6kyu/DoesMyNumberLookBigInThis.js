@@ -8,3 +8,9 @@ function narcissistic(value) {
   }
   return sum === value ? true : false;
 }
+
+// If to use the REDUCE method, the solution is next
+function narcissistic(value) {
+  let num = value.toString().split('');
+  return value === num.reduce(((prev, el) => prev + Math.pow(+el, num.length)), 0) ? true : false;
+}
