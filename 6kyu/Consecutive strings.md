@@ -1,7 +1,8 @@
 **You are given an array(list) strarr of strings and an integer k. Your task is to return the first longest string consisting of k consecutive strings taken in the array.**
-[Try to solve it on CodeWars](https://www.codewars.com/kata/56a5d994ac971f1ac500003e/javascript)
--------------------------------------
-***Examples:***
+<u>[Try to solve it on CodeWars](https://www.codewars.com/kata/56a5d994ac971f1ac500003e/javascript)</u>
+---------------
+*Examples:*
+
 strarr = ["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"], k = 2
 
 Concatenate the consecutive strings of strarr by 2, we get:
@@ -21,7 +22,8 @@ longest_consec(["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abi
 
 ***My Solution***
 --------------------------------
-#### Using loop
+- #### Using loop
+```
 function longestConsec(strarr, k) {
     if (strarr.length === 0 || k > strarr.length || k <= 0) return ""
 
@@ -37,8 +39,10 @@ function longestConsec(strarr, k) {
     }
     return result
   }
+```
 
-#### Using slice, map & reduce methods
+- #### Using slice, map & reduce methods
+```
 function longestConsec(strarr, k) {
     if (k <= 0 || k > strarr.length) {
       return "";
@@ -50,3 +54,4 @@ function longestConsec(strarr, k) {
     ))
     .reduce((longest, current) => current.length > longest.length ? current : longest)
 }
+```
